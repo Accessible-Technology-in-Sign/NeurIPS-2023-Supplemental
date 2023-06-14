@@ -11,3 +11,6 @@ Code used to convert Mediapipe Features from .data files into compressed .parque
 
 ## Recognizer Training
 Code used to train the 250 sign recognizer can be found under the `Recognizer` folder.
+
+## Information about the Docker/Apptainer Container used
+Information on the Docker/Apptainer Container used can be found [here](https://github.com/Accessible-Technology-in-Sign/ASLRT-Docker).
