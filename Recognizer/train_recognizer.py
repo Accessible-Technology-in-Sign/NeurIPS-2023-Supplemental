@@ -530,7 +530,7 @@ print("Doing feature dropping")
 pkl_files = pkl_files
 
 # Z-Value Dropping - Drop all Z-Values
-pkl_files = [df.drop(columns=[col for col in df.columns if "z" in col]) for df in tqdm(pkl_files, desc="Dropping Z-Values")]
+# pkl_files = [df.drop(columns=[col for col in df.columns if "z" in col]) for df in tqdm(pkl_files, desc="Dropping Z-Values")]
 
 # Drop all face keypoints
 pkl_files = [df.drop(columns=[col for col in df.columns if 'face' in col]) for df in tqdm(pkl_files, desc="Dropping Face Keypoints")]
@@ -648,7 +648,7 @@ def train_architecture(model, gpu_device, X_train, y_train, X_test=None, y_test=
                 np.array(X_train),
                 np.array(y_train),
                 epochs=epochs_to_use,
-                batch_size=1024,
+                batch_size=32,
                 validation_data=(np.array(X_test), np.array(y_test)),
                 callbacks=tf.keras.callbacks.EarlyStopping(
                     patience=5,
@@ -668,7 +668,7 @@ def train_architecture(model, gpu_device, X_train, y_train, X_test=None, y_test=
                 np.array(X_train),
                 np.array(y_train),
                 epochs=epochs_to_use,
-                batch_size=64,
+                batch_size=32,
                 callbacks=tf.keras.callbacks.EarlyStopping(
                     patience=5,
                     monitor="loss",
