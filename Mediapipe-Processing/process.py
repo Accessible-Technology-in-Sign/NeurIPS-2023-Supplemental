@@ -172,7 +172,7 @@ for i, file in enumerate(all_data_files):
         save_locations[i] = f"{PROCESSED_DATA_SAVE_LOCATION}/validation"
 
 # Change save_locations to test if string has review_4 and not of user 4a.8031 or 4a.8040
-test_users = ["4a.8032", "4a.8033", "4a.8034", "4a.8035", "4a.8036", "4a.8037", "4a.8038", "4a.8039"]
+test_users = ["4a.8032", "4a.8033", "4a.8031", "4a.8035", "4a.8036", "4a.8037", "4a.8038", "4a.8039"]
 for i, file in enumerate(all_data_files):
     if any([user in file for user in test_users]):
         save_locations[i] = f"{PROCESSED_DATA_SAVE_LOCATION}/test"
